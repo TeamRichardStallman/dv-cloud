@@ -22,7 +22,7 @@ spec:
         - containerPort: 8080
         env:
           - name: ENVIRONMENT
-            value: "prod"
+            value: "dev"
         envFrom:
         - secretRef:
             name: app-secret
