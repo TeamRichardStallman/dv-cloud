@@ -22,7 +22,7 @@ spec:
         - containerPort: 8080
         envFrom:
         - secretRef:
-            name: appenv
+            name: app-secret
         # resources:
         #   requests:
         #     memory: "512Mi"
