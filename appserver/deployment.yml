@@ -17,9 +17,12 @@ spec:
     spec:
       containers:
       - name: dv-backend
-        image: prunsoli/dv-backend:81
+        image: prunsoli/dv-backend:84
         ports:
         - containerPort: 8080
+        env:
+          - name: ENVIRONMENT
+            value: "prod"
         envFrom:
         - secretRef:
             name: app-secret
