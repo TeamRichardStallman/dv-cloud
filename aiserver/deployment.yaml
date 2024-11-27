@@ -1,0 +1,32 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: dv-ai
+  namespace: devterview
+  labels:
+    app: dv-ai
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: dv-ai
+  template:
+    metadata:
+      labels:
+        app: dv-ai
+    spec:
+      containers:
+      - name: dv-ai
+        image: prunsoli/dv-ai:53
+        ports:
+        - containerPort: 8000
+        envFrom:
+        - secretRef:
+            name: ai-secret
+        # resources:
+        #   requests:
+        #     memory: "1Gi"
+        #     cpu: "500m"
+        #   limits:
+        #     memory: "2Gi"
+        #     cpu: "1000m" 
