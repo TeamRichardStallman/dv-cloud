@@ -1,0 +1,28 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: dv-backend
+  name: dv-backend
+  namespace: devterview
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: dv-backend
+  template:
+    metadata:
+      labels:
+        app: dv-backend
+    spec:
+      containers:
+      - env:
+        - name: ENVIRONMENT
+          value: dev
+        envFrom:
+        - secretRef:
+            name: app-secret
+        image: prunsoli/dv-backend:85
+        name: dv-backend
+        ports:
+        - containerPort: 8080

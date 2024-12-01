@@ -4,8 +4,8 @@ kind: Kustomization
 namespace: devterview
 
 resources:
-- deployment.yml
+- deployment.yaml
 
 images:
 - name: prunsoli/dv-backend
-  newTag: "84"
+  newTag: "85"
