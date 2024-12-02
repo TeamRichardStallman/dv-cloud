@@ -17,9 +17,16 @@ spec:
     spec:
       containers:
       - name: dv-backend
-        image: prunsoli/dv-backend:84
+        image: prunsoli/dv-backend:93
         ports:
         - containerPort: 8080
+        livenessProbe:
+          httpGet:
+            path: /ping-pong
+            port: 8080
+          initialDelaySeconds: 30
+          periodSeconds: 10
+          timeoutSeconds: 5
         env:
           - name: ENVIRONMENT
             value: "dev"
@@ -33,3 +40,4 @@ spec:
         #   limits:
         #     memory: "1Gi"
         #     cpu: "500m"
+

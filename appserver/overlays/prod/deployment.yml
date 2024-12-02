@@ -1,10 +1,10 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  labels:
-    app: dv-backend
   name: dv-backend
   namespace: devterview
+  labels:
+    app: dv-backend
 spec:
   replicas: 1
   selector:
@@ -16,13 +16,28 @@ spec:
         app: dv-backend
     spec:
       containers:
-      - env:
-        - name: ENVIRONMENT
-          value: dev
+      - name: dv-backend
+        image: prunsoli/dv-backend:94
+        ports:
+        - containerPort: 8080
+        livenessProbe:
+          httpGet:
+            path: /ping-pong
+            port: 8080
+          initialDelaySeconds: 30
+          periodSeconds: 10
+          timeoutSeconds: 5
+        env:
+          - name: ENVIRONMENT
+            value: "dev"
         envFrom:
         - secretRef:
             name: app-secret
-        image: prunsoli/dv-backend:93
-        name: dv-backend
-        ports:
-        - containerPort: 8080
+        # resources:
+        #   requests:
+        #     memory: "512Mi"
+        #     cpu: "250m"
+        #   limits:
+        #     memory: "1Gi"
+        #     cpu: "500m"
+
