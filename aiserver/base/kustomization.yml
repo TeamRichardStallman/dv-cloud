@@ -1,0 +1,12 @@
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+
+namespace: devterview
+
+resources:
+- deployment.yaml
+
+images:
+- name: prunsoli/dv-ai
+  newTag: 0.0.1
+
