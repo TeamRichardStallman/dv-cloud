@@ -21,7 +21,7 @@ spec:
           value: dev
         envFrom:
         - secretRef:
-            name: app-secret
+            name: dv-back-secret
         image: prunsoli/dv-backend:0.0.5
         livenessProbe:
           httpGet:
