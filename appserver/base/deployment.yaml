@@ -32,7 +32,7 @@ spec:
             value: "dev"
         envFrom:
         - secretRef:
-            name: app-secret
+            name: dv-back-secret
         # resources:
         #   requests:
         #     memory: "512Mi"
