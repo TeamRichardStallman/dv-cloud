@@ -22,7 +22,7 @@ spec:
         envFrom:
         - secretRef:
             name: dv-back-secret
-        image: prunsoli/dv-backend:0.0.5
+        image: prunsoli/dv-backend:0.0.6
         livenessProbe:
           httpGet:
             path: /ping-pong
