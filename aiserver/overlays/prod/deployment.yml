@@ -13,12 +13,12 @@ spec:
   template:
     metadata:
       labels:
-        app: dv-ai-secret
+        app: dv-ai
     spec:
       containers:
       - envFrom:
         - secretRef:
-            name: ai-secret
+            name: dv-ai-secret
         image: prunsoli/dv-ai:0.0.1
         name: dv-ai
         ports:

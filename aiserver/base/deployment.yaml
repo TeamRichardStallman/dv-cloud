@@ -13,16 +13,16 @@ spec:
   template:
     metadata:
       labels:
-        app: dv-ai-secret
+        app: dv-ai
     spec:
       containers:
       - name: dv-ai
-        image: prunsoli/dv-ai:53
+        image: prunsoli/dv-ai:0.0.1
         ports:
         - containerPort: 8000
         envFrom:
         - secretRef:
-            name: ai-secret
+            name: dv-ai-secret
         # resources:
         #   requests:
         #     memory: "1Gi"
@@ -30,3 +30,8 @@ spec:
         #   limits:
         #     memory: "2Gi"
         #     cpu: "1000m" 
+      - name: dv-ai-celery
+        image: prunsoli/dv-ai-celery:0.0.1
+        envFrom:
+        - secretRef:
+            name: dv-ai-secret
