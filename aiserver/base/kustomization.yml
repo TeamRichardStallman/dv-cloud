@@ -9,3 +9,5 @@ resources:
 images:
 - name: prunsoli/dv-ai
   newTag: 0.0.1
+- name: prunsoli/dv-ai-celery
+  newTag: 0.0.1
