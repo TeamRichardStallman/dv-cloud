@@ -13,7 +13,7 @@ spec:
   template:
     metadata:
       labels:
-        app: dv-ai
+        app: dv-ai-secret
     spec:
       containers:
       - name: dv-ai
