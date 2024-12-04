@@ -13,7 +13,7 @@ spec:
   template:
     metadata:
       labels:
-        app: dv-ai-secret
+        app: dv-ai
     spec:
       containers:
       - name: dv-ai
@@ -22,7 +22,7 @@ spec:
         - containerPort: 8000
         envFrom:
         - secretRef:
-            name: ai-secret
+            name: dv-ai-secret
         # resources:
         #   requests:
         #     memory: "1Gi"

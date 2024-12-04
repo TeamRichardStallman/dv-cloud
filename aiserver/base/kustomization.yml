@@ -9,4 +9,3 @@ resources:
 images:
 - name: prunsoli/dv-ai
   newTag: 0.0.1
-
