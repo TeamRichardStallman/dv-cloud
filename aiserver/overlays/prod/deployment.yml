@@ -23,6 +23,25 @@ spec:
         name: dv-ai
         ports:
         - containerPort: 8000
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: dv-ai-celery
+  name: dv-ai-celery
+  namespace: devterview
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: dv-ai-celery
+  template:
+    metadata:
+      labels:
+        app: dv-ai-celery
+    spec:
+      containers:
       - envFrom:
         - secretRef:
             name: dv-ai-secret
