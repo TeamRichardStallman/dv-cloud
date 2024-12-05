@@ -19,7 +19,12 @@ spec:
       - envFrom:
         - secretRef:
             name: dv-ai-secret
-        image: prunsoli/dv-ai:0.0.1
+        image: prunsoli/dv-ai:0.0.5
         name: dv-ai
         ports:
         - containerPort: 8000
+      - envFrom:
+        - secretRef:
+            name: dv-ai-secret
+        image: prunsoli/dv-ai-celery:0.0.5
+        name: dv-ai-celery

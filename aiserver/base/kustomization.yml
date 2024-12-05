@@ -10,4 +10,4 @@ images:
 - name: prunsoli/dv-ai
   newTag: 0.0.5
 - name: prunsoli/dv-ai-celery
-  newTag: 0.0.5
+  newTag: 0.0.1
