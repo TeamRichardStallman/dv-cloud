@@ -12,6 +12,10 @@ spec:
       app: dv-backend
   template:
     metadata:
+      annotations:
+        prometheus.io/path: /actuator/prometheus
+        prometheus.io/port: "8080"
+        prometheus.io/scrape: "true"
       labels:
         app: dv-backend
     spec:
@@ -22,7 +26,7 @@ spec:
         envFrom:
         - secretRef:
             name: dv-back-secret
-        image: prunsoli/dv-backend:0.0.7
+        image: prunsoli/dv-backend:0.0.2
         livenessProbe:
           httpGet:
             path: /ping-pong
