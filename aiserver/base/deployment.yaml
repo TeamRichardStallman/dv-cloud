@@ -23,13 +23,13 @@ spec:
         envFrom:
         - secretRef:
             name: dv-ai-secret
-        # resources:
-        #   requests:
-        #     memory: "1Gi"
-        #     cpu: "500m"
-        #   limits:
-        #     memory: "2Gi"
-        #     cpu: "1000m" 
+        resources:
+          requests:
+            memory: "1Gi"
+            cpu: "500m"
+          limits:
+            memory: "2Gi"
+            cpu: "1000m" 
 
 ---
 apiVersion: apps/v1
@@ -55,3 +55,10 @@ spec:
         envFrom:
         - secretRef:
             name: dv-ai-secret
+        resources:
+          requests:
+            memory: "512Mi"
+            cpu: "250m"
+          limits:
+            memory: "1Gi"
+            cpu: "500m"        

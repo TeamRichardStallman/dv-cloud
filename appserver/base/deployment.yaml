@@ -14,6 +14,10 @@ spec:
     metadata:
       labels:
         app: dv-backend
+      annotations:
+        prometheus.io/scrape: "true"           # Prometheus 스크랩 활성화
+        prometheus.io/path: "/actuator/prometheus"  # 스크랩할 경로
+        prometheus.io/port: "8080"            # 스크랩할 포트
     spec:
       containers:
       - name: dv-backend
@@ -33,11 +37,10 @@ spec:
         envFrom:
         - secretRef:
             name: dv-back-secret
-        # resources:
-        #   requests:
-        #     memory: "512Mi"
-        #     cpu: "250m"
-        #   limits:
-        #     memory: "1Gi"
-        #     cpu: "500m"
-
+        resources:
+          requests:
+            memory: "1Gi"
+            cpu: "500m"
+          limits:
+            memory: "2Gi"
+            cpu: "1000m"

@@ -1,0 +1,39 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: dv-front
+  namespace: devterview
+  labels:
+    app: dv-front
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: dv-front
+  template:
+    metadata:
+      labels:
+        app: dv-front
+    spec:
+      containers:
+      - name: dv-front
+        image: prunsoli/dv-front:0.0.1
+        ports:
+        - containerPort: 3000
+        livenessProbe:
+          httpGet:
+            path: /api
+            port: 3000
+          initialDelaySeconds: 30
+          periodSeconds: 10
+          timeoutSeconds: 5
+        envFrom:
+        - secretRef:
+            name: dv-front-secret
+        resources:
+          requests:
+            memory: "1Gi"
+            cpu: "500m"
+          limits:
+            memory: "2Gi"
+            cpu: "1000m"
