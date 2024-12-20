@@ -7,7 +7,5 @@ resources:
 - deployment.yaml
 
 images:
-- name: prunsoli/dv-backend
-  newTag: 0.0.2
 - name: prunsoli/dv-front-prod
   newTag: 0.0.20
