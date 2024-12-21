@@ -8,4 +8,4 @@ resources:
 
 images:
 - name: prunsoli/dv-front-prod
-  newTag: 0.0.20
+  newTag: 0.0.21
