@@ -6,7 +6,7 @@ metadata:
   name: dv-front
   namespace: devterview
 spec:
-  replicas: 1
+  replicas: 2
   selector:
     matchLabels:
       app: dv-front
