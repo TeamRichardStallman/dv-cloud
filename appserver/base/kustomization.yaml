@@ -8,4 +8,4 @@ resources:
 
 images:
 - name: prunsoli/dv-backend
-  newTag: 0.0.4
+  newTag: 0.0.5
