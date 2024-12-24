@@ -19,7 +19,7 @@ spec:
       - envFrom:
         - secretRef:
             name: dv-front-secret
-        image: prunsoli/dv-front-prod:0.0.26
+        image: prunsoli/dv-front-prod:0.0.27
         livenessProbe:
           httpGet:
             path: /api
