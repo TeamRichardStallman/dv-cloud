@@ -10,6 +10,6 @@ images:
 - name: prunsoli/dv-ai
   newTag: 0.0.4
 - name: prunsoli/dv-ai-celery
-  newTag: 0.0.5
+  newTag: 0.0.6
 - name: prunsoli/dv-ai-prod
-  newTag: 0.0.5
+  newTag: 0.0.6

@@ -52,7 +52,7 @@ spec:
       - envFrom:
         - secretRef:
             name: dv-ai-secret
-        image: prunsoli/dv-ai-celery:0.0.5
+        image: prunsoli/dv-ai-celery:0.0.6
         name: dv-ai-celery
         resources:
           limits:
